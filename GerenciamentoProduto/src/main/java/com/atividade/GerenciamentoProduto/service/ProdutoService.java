@@ -20,17 +20,14 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
-    @GetMapping
     public List<Produto> listarTodosProdutos(){
         return produtoRepository.findAll();
     }
 
-    @GetMapping("/{id}")
     public Optional<Produto> buscarProdutoId(Long id){
         return produtoRepository.findById(id);
     }
 
-    @DeleteMapping("/{id}")
     public void deletarProduto(Long id){
         produtoRepository.deleteById(id);
     }
